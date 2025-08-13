@@ -1,0 +1,23 @@
+<script>
+  console.log("Script executing!");
+  const username = "bhm365";
+  const appLink = "tg://resolve?domain=" + username;
+  const webLink = "https://t.me/" + username;
+
+  console.log("Attempting app redirect...");
+  window.location.href = appLink;
+
+  setTimeout(() => {
+    console.log("Fallback triggered");
+    document.write(`
+      <h2>Redirect failed</h2>
+      <a href="${webLink}" style="
+        background: #0088cc;
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        text-decoration: none;
+      ">OPEN TELEGRAM MANUALLY</a>
+    `);
+  }, 1000);
+</script>
